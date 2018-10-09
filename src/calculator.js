@@ -1,11 +1,14 @@
 function add(numbers){
+	var newLine = numbers.includes("\n");
 
 	if(numbers == ""){
 		return 0;
 	}
-	if(numbers.includes("\n")){
+
+	if(newLine){
 		numbers = numbers.replace("\n", ",");
 	}
+	
 	if(numbers.includes(",")){
 		var numbArr1 = numbers.split(",");
 		
