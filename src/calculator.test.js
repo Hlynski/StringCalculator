@@ -11,3 +11,7 @@ test("it should return 2", () => {
 test("it should add the 2 numbers and return the sum", () => {
 	expect(add("1,2")).toBe(3);
 });
+
+test("it should add the random total of numbers and return the sum", () => {
+	expect(add("1,2,6,3,7")).toBe(19);
+});

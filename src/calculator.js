@@ -1,13 +1,21 @@
 function add(numbers){
-	var numbArr;
 
 	if(numbers == ""){
 		return 0;
 	}
-	else if(numbers.includes(",")){
-		numbArr = numbers.split(",");
-		return parseInt(numbArr[0]) + parseInt(numbArr[1]);
+	if(numbers.includes(",")){
+		var numbArr = numbers.split(",");
+		var total = 0;
+
+		for(var i = 0; i < numbArr.length; i++){
+			total += parseInt(numbArr[i]);
+			
+		}
+		return total;
+		
 	}
-	return parseInt(numbers);
+	else{
+		return parseInt(numbers);
+	}
 }
 module.exports = add;
