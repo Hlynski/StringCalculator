@@ -1,5 +1,5 @@
 const add = require('./calculator');
-
+const throws = require("assert");
 test("it should return 0 from an empty string", () => {
 	expect(add("")).toBe(0);
 });
@@ -21,5 +21,8 @@ test("it should add the numbers without reading the sign ", () => {
 });
 
 test("it should throw an error exception", () => {
-	expect(function(){add("-1, 2")}).toThrow("Negetives not allowed: -1");
+	throws(add("-1, 2"),/Negetives not allowed: -1/);
+});
+test("it should throw an error exception", () => {
+	throws(add("-1, 2, -3"),/Negetives not allowed: -1, -3/);
 });

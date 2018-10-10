@@ -22,15 +22,28 @@ function add(numbers){
 
 function sum(numbArr){
 	var total = 0;
-	
+	var num = numbArr;
+	var negRes = 0;
+	var text = "Negetives not allowed: ";
 		for(var i = 0; i < numbArr.length; i++){
-			if(numbArr[i] < 0){
-				throw "Negetives not allowed: " + numbArr[i];
+			if(num < 0){
+				if(!(num == "")){
+					negRes += negRes + ", " + numb;
+				}
+				else{
+					negRes += numb;
+				}
 			}
-			total += parseInt(numbArr[i]);
+			else{
+				total += parseInt(numbArr[i]);
+			}
 		}
-		return total;
+		if(negRes.length > 0){
+			throw "Negetives not allowed: " + negRes;
+		}
+		else{
+			return total;
+		}
 }
-
 
 module.exports = add;
