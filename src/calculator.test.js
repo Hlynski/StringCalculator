@@ -26,3 +26,13 @@ test("it should throw an error exception", () => {
 test("it should throw an error exception", () => {
 	throws(add("-1, 2, -3"),/Negetives not allowed: -1, -3/);
 });
+
+test("it should ignore the 1000 and just return the single number ", () => {
+	expect(add("12, 1000")).toBe(12);
+});
+
+test("it should ignore the numbers bigger then 1000 and just return the numbers ", () => {
+	expect(add("12, 24, 48, 72, 100, 1000, 10000")).toBe(256);
+});
+
+

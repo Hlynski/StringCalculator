@@ -1,11 +1,9 @@
 function add(numbers){
-	var newLine = numbers.includes("\n");
-	
 	if(numbers == ""){
 		return 0;
 	}
 
-	if(newLine){
+	if(numbers.includes("\n")){
 		numbers = numbers.replace("\n", ",");
 	}
 	
@@ -17,7 +15,6 @@ function add(numbers){
 	else{
 		return parseInt(numbers);
 	}
-
 }
 
 function sum(numbArr){
@@ -28,11 +25,14 @@ function sum(numbArr){
 		for(var i = 0; i < numbArr.length; i++){
 			if(num < 0){
 				if(!(num == "")){
-					negRes += negRes + ", " + numb;
+					negRes += ", " + numb;
 				}
 				else{
 					negRes += numb;
 				}
+			}
+			else if(isNaN(numbArr[i]) || numbArr[i] >= 1000){
+				numbArr[i] = 0;
 			}
 			else{
 				total += parseInt(numbArr[i]);
@@ -45,5 +45,4 @@ function sum(numbArr){
 			return total;
 		}
 }
-
 module.exports = add;
