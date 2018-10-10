@@ -19,3 +19,7 @@ test("it should add the random total of numbers and return the sum", () => {
 test("it should add the numbers without reading the sign ", () => {
 	expect(add("1\n2, 3")).toBe(6);
 });
+
+test("it should throw an error exception", () => {
+	expect(function(){add("-1, 2")}).toThrow("Negetives not allowed: -1");
+});

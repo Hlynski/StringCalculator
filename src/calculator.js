@@ -1,6 +1,6 @@
 function add(numbers){
 	var newLine = numbers.includes("\n");
-
+	
 	if(numbers == ""){
 		return 0;
 	}
@@ -10,9 +10,9 @@ function add(numbers){
 	}
 	
 	if(numbers.includes(",")){
-		var numbArr1 = numbers.split(",");
+		var numbArr = numbers.split(",");
 		
-		return sum(numbArr1);
+		return sum(numbArr);
 	}
 	else{
 		return parseInt(numbers);
@@ -22,7 +22,11 @@ function add(numbers){
 
 function sum(numbArr){
 	var total = 0;
+	
 		for(var i = 0; i < numbArr.length; i++){
+			if(numbArr[i] < 0){
+				throw "Negetives not allowed: " + numbArr[i];
+			}
 			total += parseInt(numbArr[i]);
 		}
 		return total;
