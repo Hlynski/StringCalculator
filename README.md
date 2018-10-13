@@ -6,10 +6,15 @@ This is a individual assignment.
 1. Create a GitHub repository called StringCalculator
 2. Share this repository with the teachers account: hap2000
 3. Programming environment:
+
 ❍ Programming language: JavaScript
+
 ❍ Testing library: Jest
+
 ■ Jest can be added using NPM
+
 ■ Once installed, do:
+
 1. npm init
 2. npm install --save-dev jest
 4. After each TDD cycle you need to create git commit with descriptive message. If a commit is
