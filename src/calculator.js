@@ -3,13 +3,9 @@ function add(numbers){
 		return 0;
 	}
 
-	if(numbers.includes("\n")){
+	if(hasSign(numbers)){
 		numbers = numbers.replace("\n", ",");
-	}
-	
-	if(numbers.includes(",")){
 		var numbArr = numbers.split(",");
-		
 		return sum(numbArr);
 	}
 	else{
@@ -17,14 +13,16 @@ function add(numbers){
 	}
 }
 
+
 function sum(numbArr){
 	var total = 0;
-	var num = numbArr;
 	var negRes = 0;
+	var numb = numbArr + "";
+	var delimiters = ",";
 	var text = "Negetives not allowed: ";
 		for(var i = 0; i < numbArr.length; i++){
-			if(num < 0){
-				if(!(num == "")){
+			if(numbArr < 0){
+				if(!(numbArr == "")){
 					negRes += ", " + numb;
 				}
 				else{
@@ -41,8 +39,17 @@ function sum(numbArr){
 		if(negRes.length > 0){
 			throw "Negetives not allowed: " + negRes;
 		}
-		else{
-			return total;
-		}
+		
+		return total;
+	
 }
+function hasSign(numbers){
+	if(numbers.includes(",") || numbers.includes("\n")){
+		
+		return true;
+	}
+	return false;
+}
+
+
 module.exports = add;
